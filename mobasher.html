@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#bc1644">
+    <meta property="og:image" content="https://i.postimg.cc/tJhmNwKT/gogd.png">
+    <meta property="og:title" content="البث المباشر -- تصميم المهندس خالد الغيلي">
+    <meta property="og:type" content="website">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="البث المباشر - تصميم المهندس خالد الغيلي">
+    <meta property="og:description" content="جميع القنوات الفضائية HD">
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.im.ge/2024/04/18/Z12uML.live-removebg-preview.png">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta name="google-adsense-account" content="ca-pub-9712428317791754">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0' name='viewport'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <title>البث المباشر - القنوات الفضائية</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #bc1644;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: white;
+            font-family: "Cairo", sans-serif;
+            text-align: center;
+        }
+
+        #loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #bc1644;
+        }
+
+        #loader img {
+            width: 300px;
+            height: auto;
+        }
+
+        #network-name {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        #engineer {
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+        #content {
+            display: none;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .loader-loop {
+            width: 100px;
+            display: grid;
+            margin-top:30px;
+            background: radial-gradient(farthest-side, #fff 98%, #0000) center/30px 100% no-repeat;
+            --mask: 
+                radial-gradient(12px at left 15px top 50%, #0000 95%, #000),
+                radial-gradient(12px at center, #0000 95%, #000),
+                radial-gradient(12px at right 15px top 50%, #0000 95%, #000);
+            -webkit-mask: var(--mask);
+            mask: var(--mask);
+            -webkit-mask-composite: source-in;
+            mask-composite: intersect;
+            animation: l2 1s infinite alternate;
+        }
+
+        .loader-loop:before,
+        .loader-loop:after {
+            content: "";
+            grid-area: 1/1;
+            height: 30px;
+            aspect-ratio: 1;
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .loader-loop:after {
+            margin-left: auto;
+        }
+
+        @keyframes l2 {
+            to {
+                width: 50px;
+            }
+        }
+    </style>
+    <script>
+        function showContent() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        function loadIframe() {
+            let encodedUrl;
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                encodedUrl = 'aHR0cHM6Ly9nb29keS1jb2RlLmdpdGh1Yi5pby9saXZlL3VwZGF0ZS1tb2Jhc2hlci5odG1s';
+            } else {
+                encodedUrl = 'aHR0cHM6Ly9nb29keS1jb2RlLmdpdGh1Yi5pby9saXZlL3Nwb3J0Lmh0bWw=';
+            }
+
+            const decodedUrl = atob(encodedUrl);
+            const iframe = document.getElementById('content');
+            iframe.src = decodedUrl;
+            iframe.onload = showContent;
+        }
+
+        window.onload = loadIframe;
+    </script>
+</head>
+<body>
+    <div id="loader">
+        <img src="https://i.postimg.cc/qvZR4v9D/Mobasher.png" alt="Logo">
+        <div id="network-name"><strong>البث المباشـر</strong></div>
+        <div id="engineer"><strong>!تابع كل شيء مباشرة</strong></div>
+        <div id="engineer"><strong>تجربة فريدة على شبكتنا اللاسلكية</strong></div>
+        <div id="engineer">تصميم المهندس | خالد الغيلي</div>
+        <div class="loader-loop"></div>
+    </div>
+    <iframe id="content"></iframe>
+</body>
+</html>
